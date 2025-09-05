@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+</head>
+<body>
+<h1>Dashboard</h1>
+<a href="/admin/logout">Logout</a>
+
+<h2>Add Product</h2>
+<form action="/admin/product/add" method="POST" enctype="multipart/form-data">
+  <input type="text" name="name" placeholder="Product Name" required>
+  <input type="number" name="price" placeholder="Price" required>
+  <input type="file" name="image" required>
+  <button type="submit">Add Product</button>
+</form>
+
+<h2>Add Slider</h2>
+<form action="/admin/slider/add" method="POST" enctype="multipart/form-data">
+  <input type="text" name="title" placeholder="Slider Title" required>
+  <input type="file" name="image" required>
+  <button type="submit">Add Slider</button>
+</form>
+
+<h2>Products</h2>
+<ul>
+  <% products.forEach(p => { %>
+    <li><%= p.name %> - $<%= p.price %></li>
+  <% }) %>
+</ul>
+
+<h2>Sliders</h2>
+<ul>
+  <% sliders.forEach(s => { %>
+    <li><%= s.title %></li>
+  <% }) %>
+</ul>
+</body>
+</html>

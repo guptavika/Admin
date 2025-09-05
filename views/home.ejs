@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home Page</title>
+</head>
+<body>
+<h1>Home Page</h1>
+
+<h2>Sliders</h2>
+<% sliders.forEach(s => { %>
+  <div>
+    <h3><%= s.title %></h3>
+    <img src="<%= s.image %>" width="300">
+  </div>
+<% }) %>
+
+<h2>Products</h2>
+<% products.forEach(p => { %>
+  <div style="border:1px solid #000; margin:10px; padding:10px; display:inline-block;">
+    <h3><%= p.name %></h3>
+    <p>Price: $<%= p.price %></p>
+    <img src="<%= p.image %>" width="150">
+  </div>
+<% }) %>
+</body>
+</html>
