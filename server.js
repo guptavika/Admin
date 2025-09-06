@@ -8,6 +8,7 @@ import MongoStore from "connect-mongo";
 import adminRoutes from "./routes/adminRoutes.js";
 import bcrypt from "bcrypt";
 import Admin from "./models/Admin.js";
+import Product from "./models/Product.js";
 
 dotenv.config();
 const app = express();
@@ -33,6 +34,9 @@ app.use(session({
   store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
   cookie: { maxAge: 1000 * 60 * 60 } // 1 hour
 }));
+
+
+
 
 // Routes
 app.use("/admin", adminRoutes);
